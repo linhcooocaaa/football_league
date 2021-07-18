@@ -24,8 +24,8 @@ public class League {
     @Column(name = "leagueName", nullable = false)
     private String leagueName;
 
-    @Column(name = "session", nullable = false)
-    private String session;
+    @Column(name = "season", nullable = false)
+    private String season;
 
     @ManyToOne
     @JoinColumn(name = "country_id", nullable = false)
