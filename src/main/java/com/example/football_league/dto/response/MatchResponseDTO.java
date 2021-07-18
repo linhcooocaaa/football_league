@@ -4,11 +4,13 @@ import com.example.football_league.model.Match;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 @Builder
 public class MatchResponseDTO {
 
-    private Integer id;
+    private String id;
     private TeamResponseDTO homeTeam;
     private TeamResponseDTO awayTeam;
     private LeagueResponseDTO league;
@@ -25,7 +27,7 @@ public class MatchResponseDTO {
 
     public static MatchResponseDTO fromModel(Match match) {
         return MatchResponseDTO.builder()
-                .id(match.getId())
+                .id(match.getId().toString())
                 .homeTeam(TeamResponseDTO.fromModel(match.getHomeTeam()))
                 .awayTeam(TeamResponseDTO.fromModel(match.getAwayTeam()))
                 .league(LeagueResponseDTO.fromModel(match.getLeague()))

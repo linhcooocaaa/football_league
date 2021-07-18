@@ -1,25 +1,20 @@
 package com.example.football_league.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.example.football_league.model.base.BaseEntity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @Table(name = "league")
 @Entity
 @AllArgsConstructor
-public class League {
-
-    @Id
-    @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Integer id;
+public class League extends BaseEntity {
 
     @Column(name = "leagueName", nullable = false)
     private String leagueName;

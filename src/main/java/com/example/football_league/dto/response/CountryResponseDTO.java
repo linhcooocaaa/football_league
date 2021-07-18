@@ -4,16 +4,18 @@ import com.example.football_league.model.Country;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 @Builder
 public class CountryResponseDTO {
 
-    private Integer id;
+    private String id;
     private String countryName;
 
     public static CountryResponseDTO fromModel(Country country) {
         return CountryResponseDTO.builder()
-                .id(country.getId())
+                .id(country.getId().toString())
                 .countryName(country.getCountryName())
                 .build();
     }
